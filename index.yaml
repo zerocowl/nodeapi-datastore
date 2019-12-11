@@ -1,0 +1,93 @@
+# DEFINES THE COMPOSITE INDEXES FOR GOOGLE DATASTORE
+indexes: 
+ 
+- kind: Card
+  properties: 
+  - name: active
+  - name: campaignId
+  - name: deletedAt
+  - name: priority
+  - name: userId
+
+- kind: Card
+  properties: 
+  - name: active
+  - name: deletedAt
+  - name: userId
+  - name: priority
+
+- kind: Card
+  properties: 
+  - name: active
+  - name: deletedAt
+  - name: country
+
+- kind: Card
+  properties: 
+  - name: active
+  - name: deletedAt
+  - name: clientId
+
+- kind: Card
+  properties:
+  - direction: asc
+    name: campaignId
+  - direction: asc
+    name: deletedAt
+
+- kind: Card
+  properties: 
+  - name: active
+  - name: deletedAt
+  - name: snoozedAt
+  - name: userId
+  - name: campaignId
+  - name: createdAt
+
+- kind: Card
+  properties: 
+  - name: active
+  - name: deletedAt
+  - name: snoozedAt
+  - name: userId
+  - name: createdAt
+
+- kind: Card
+  properties: 
+  - name: userId
+  - name: active
+  - name: clientId
+  - name: deletedAt
+
+- kind: Card
+  properties: 
+  - name: userId
+  - name: active
+  - name: clientId
+  - name: deletedAt
+  - name: menu
+
+- kind: Card
+  properties: 
+  - name: userId
+  - name: active
+  - name: clientId
+  - name: deletedAt
+  - name: tags
+
+- kind: Card
+  properties: 
+  - name: userId
+  - name: active
+  - name: clientId
+  - name: deletedAt
+  - name: country
+
+- kind: Card
+  properties: 
+  - name: userId
+  - name: active
+  - name: clientId
+  - name: deletedAt
+  - name: menu
+  - name: country

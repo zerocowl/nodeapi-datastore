@@ -1,0 +1,41 @@
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### OSX ###
+*.DS_Store
+
+### VisualStudioCode
+.vscode/
+
+### Node 
+logs/
+*.log
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm/
+
+# Cache
+.cache/
+
+# Package
+package-lock.json
+### Test 
+test/build/
+
+### Project Code 
+dist/
+
+### Google datastore access
+src/config/gcloud-servicekey.json
+src/config/gcloud-servicekey-hml.json
+src/config/gcloud-servicekey-dev.json
+.env**

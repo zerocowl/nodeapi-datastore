@@ -1,0 +1,746 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Motor Cards V3
+  description: Motor de Cards Natura - v3
+  contact: {}
+host: "motor-cards-v3.endpoints.natura-191517.cloud.goog"
+x-google-endpoints:
+  - name: "motor-cards-v3.endpoints.natura-191517.cloud.goog"
+    target: "35.198.20.49"
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  '/card/read/{id}':
+    get:
+      security:
+      - api_key: []
+      description: mark a card as read
+      summary: mark a card as read
+      tags:
+        - cards
+      operationId: GetCardRead
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              status: 
+               success: true
+               message: "operation success"
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/api/health':
+    get:
+      security:
+      - api_key: []
+      description: Gets api health check
+      summary: Gets api health check
+      tags: 
+        - health
+      operationId: GetHealthCheck
+      responses:
+        '200':
+          description: success health check
+          schema:
+            example: 
+              status: '200'
+              message: "success on api connect"
+  '/user/country':
+    get:
+      security:
+      - api_key: []
+      description: Get's users clientid and country
+      summary: Gets users by clientid and country
+      tags:
+        - users
+      operationId: UserCountryGet
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: clientid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: country
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: []
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/client':
+    get:
+      security:
+      - api_key: []
+      description: Get's a card by client id
+      summary: Gets a card by client id
+      tags:
+        - cards
+      operationId: CardClientGet
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: clientid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: 
+               cards: []
+               moreResults: false
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/country':
+    get:
+      security:
+      - api_key: []
+      description: Get's a card by country
+      summary: Gets a card by country
+      tags:
+        - cards
+      operationId: CardCountryGet
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: country
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: 
+               cards: []
+               moreResults: false
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/menu/{id}':
+    get:
+      security:
+      - api_key: []
+      description: Get's a card by menu id
+      summary: Gets a card by menu id
+      tags:
+        - cards
+      operationId: CardMenuByIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: 
+               cards: []
+               moreResults: false
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/createId/{id}':
+    get:
+      security:
+      - api_key: []
+      description: Get's a card by card's user id
+      summary: Gets a card by card's create id
+      tags:
+        - cards
+      operationId: CardCreateIdByIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: 
+               cards: []
+               moreResults: false
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/user':
+    get:
+      security:
+      - api_key: []
+      description: Get's a card by user id
+      summary: Gets a card by user id
+      tags:
+        - cards
+      operationId: CardUserByIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: 
+               cards: []
+               moreResults: false
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/snooze/{id}':
+    put:
+      security:
+      - api_key: []
+      description: dississ card by id
+      summary: Dismiss cards1
+      tags:
+        - cards
+      operationId: CardSnoozeByIdPut
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Dismissed with success
+          schema:
+            $ref: '#/definitions/UpdateCard'
+        '404':
+          description: Card not found
+          schema: {}
+  '/card/combination':
+    delete:
+      security:
+      - api_key: []
+      description: >-
+        Delete a card by combination, formed by composition of campaignID +
+        userId
+      summary: Delete card
+      tags:
+        - cards
+      operationId: CardCombinationDelete
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: cards
+          in: body
+          required: true
+          description: ''
+          schema:
+            example: 
+              cards:
+              - userId: BR123,
+                campaignId: 7954658e-6117-48fd-a42d-86b0ace09ee2
+      responses:
+        '200':
+          description: Dismissed with success
+          schema:
+            example:
+              status:
+                message: Operation success
+                success: true
+              details: 
+                success: []
+                errors: []
+        '404':
+          description: Card not found
+          schema: {}
+  '/card/campaign/{id}':
+    delete:
+      security:
+      - api_key: []
+      description: Delete a card by campaign id
+      summary: Delete card1
+      tags:
+        - cards
+      operationId: CardCampaignByIdDelete
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Dismissed with success
+          schema:
+            $ref: '#/definitions/UpdateCard'
+        '404':
+          description: Card not found
+          schema: {}
+  '/card/campaignGroup/{id}':
+    delete:
+      security:
+      - api_key: []
+      description: Delete a card by campaign group
+      summary: Delete cards
+      tags:
+        - cards
+      operationId: CardDeleteByCampaingGroup
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Deleted with success
+          schema:
+            $ref: '#/definitions/UpdateCard'
+        '404':
+          description: Card not found
+          schema: {}
+  '/jobs/check/{id}':
+    get:
+      security:
+      - api_key: []
+      description: Checks if a job has been completed
+      summary: Checks if a job has been completed
+      tags:
+        - Jobs
+      operationId: CheckStatusJob
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              status: 
+               success: true
+               message: "DONE"
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/user/menus':
+    get:
+      security:
+      - api_key: []
+      description: Get all menus from a user
+      summary: Get all menus from a user
+      tags:
+        - cards
+      operationId: getusermenus
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              status: 
+               success: true
+               message: "DONE"
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+  '/card/{id}':
+    get:
+      security:
+      - api_key: []
+      description: Get's a card by id
+      summary: Gets a card by id
+      tags:
+        - cards
+      operationId: CardByIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Get with success
+          schema:
+            example: 
+              response: 
+               cards: []
+               moreResults: false
+              status: 
+               success: true
+               message: ""
+        '412':
+          description: Get without userid header
+          schema: 
+            example: 
+              status: 
+               success: false
+               message: "You aren't logged"
+    put:
+      security:
+      - api_key: []
+      description: dississ card by id
+      summary: Dismiss cards
+      tags:
+        - cards
+      operationId: CardByIdPut
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Dismissed with success
+          schema:
+            $ref: '#/definitions/UpdateCard'
+        '404':
+          description: Card not found
+          schema: {}
+    delete:
+      security:
+      - api_key: []
+      description: Delete a card by id
+      summary: Delete card
+      tags:
+        - cards
+      operationId: CardByIdDelete
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: Dismissed with success
+          schema:
+            $ref: '#/definitions/UpdateCard'
+        '404':
+          description: Card not found
+          schema: {}
+  /card:
+    post:
+      security:
+      - api_key: []
+      description: Adds an Card to the system
+      summary: Adds an card item
+      tags:
+        - cards
+      operationId: CardPost
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/CreateCard'
+      responses:
+        '202':
+          description: Insertion Successfull
+        '412':
+          description: 'invalid input, object invalid or request without userid header'
+          schema: {}
+definitions:
+  CombinationCard:
+    title: CombinationCard
+    type: object
+    properties:
+      cards:
+        description: ''
+        type: array
+        items:
+          title: ''
+          type: object
+          example:
+            userId: 'BR123123'
+            campaignId: 'cad598b-qwe456879-brsdsa9875-cdw999'
+  UpdateCard:
+    title: UpdateCard
+    type: object
+    properties:
+      status:
+        description: ''
+        example:
+          message: Operation success
+          success: true
+        type: object
+  CreateCard:
+    title: CreateCard
+    type: object
+    properties:
+      cards:
+        description: ''
+        type: array
+        items:
+          type: object
+          example: 
+            dateStart: "2016-08-29T09:12:33.001Z"
+            dateEnd: "2016-08-29T09:12:33.001Z"
+            template: "k2kl32lkdsa90bgcvx9a"
+            menu: "dsadsa21321j432kjldjsa901"
+            metadata: [{}, {}, {}]
+            tags: ['tag1', 'tag2']
+            userId: "99999999999999"
+            createdBy: "99999999999999"
+            createId: "99999wpw99q999999cn9q"
+            priority: 5
+            campaignId: "99999wpw99q999999cn9q"
+            country: 'BR'
+            clientId: '1dasd123'
+  Card:
+    title: Card
+    type: object
+    properties: 
+      dateStart:
+        type: 'string'
+        example: "2016-08-29T09:12:33.001Z"
+      dateEnd:
+        type: 'string'
+        example: "2016-08-29T09:12:33.001Z"
+      template: 
+        type: 'string'
+        example: "456456"
+      menu:
+        type: 'string'
+        example: "0"
+      metadata: 
+        type: 'array'
+        items:
+          type: 'object'
+          example: [{}, {}, {}]
+      tags: 
+        type: 'array'
+        items: 
+          type: 'string'
+          example: ['tag1', 'tag2']
+      userId: 
+        type: 'string'
+        example: "BR123456789"
+      createdBy:
+        type: 'string'
+        example: "BR123456789"
+      createId:
+        type: 'string'
+        example: "123"
+      priority: 
+        type: 'string'
+        example: '5'
+      campaignId: 
+        type: 'string'
+        example: "99999wpw99q999999cn9q"
+      country: 
+        type: 'string'
+        example: 'BR'
+      clientId: 
+        type: 'string'
+        example: 'bae123-casrthjg563213-dsa1d22sadsa-1dasd123'
+tags: []
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"

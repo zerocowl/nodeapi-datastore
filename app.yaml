@@ -1,0 +1,13 @@
+runtime: nodejs
+env: flex
+env_variables:
+  APP_PORT: '8080'
+manual_scaling:
+  instances: 4
+# network:
+#   forwarded_ports:
+#     - 8080/tcp
+resources:
+  cpu: 2
+  memory_gb: 4
+  disk_size_gb: 10
