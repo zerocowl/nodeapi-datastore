@@ -2,12 +2,12 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Motor Cards V3
-  description: Motor de Cards Natura - v3
+  description: Motor de Cardsv3
   contact: {}
-host: "motor-cards-v3.endpoints.natura-191517.cloud.goog"
+host: "motor-cards-v3.endpoints.v3-191517.cloud.goog"
 x-google-endpoints:
-  - name: "motor-cards-v3.endpoints.natura-191517.cloud.goog"
-    target: "35.198.20.49"
+  - name: "motor-cards-v3.endpoints.v3-191517.cloud.goog"
+    target: "35.198.00.00"
 basePath: /
 schemes:
   - http
